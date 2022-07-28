@@ -1,3 +1,21 @@
+# APP'S NAME
+This is a back-end application for X. 
+
+### Requirements
+* ruby 2.6.1
+* sqlite3 3.28
+
+### How to use
+Fork and clone 
+Bundle install
+Run rake db:migrate
+Run rake db:seed
+Run rake 
+
+### License
+
+### Contributing
+
 # Phase 3 Project Guidelines
 
 ## Learning Goals
