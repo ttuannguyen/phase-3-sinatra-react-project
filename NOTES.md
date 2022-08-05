@@ -24,18 +24,16 @@ payment method
 booth number 
 comment 
 
-has many directions
+belongs to a cuisine 
 
 Cuisine
 --- 
 name 
 country
 
+has many vendors
 
 
-Ingredient 
----
-name 
-has many meals 
+
 
 
