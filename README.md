@@ -12,6 +12,8 @@ Run rake db:migrate
 Run rake db:seed
 Run rake 
 
+To run server: rake server
+
 ### License
 
 ### Contributing
