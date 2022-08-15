@@ -24,12 +24,14 @@ class VendorsController < ApplicationController
         # send back a response with the created review as JSON
         vendor.to_json
     end
-    # collection.create for associated objects
 
     patch "/vendors/:id" do
     end
 
     delete "/vendors/:id" do
+        vendor = Vendor.find(params[:id])
+        vendor.destroy
+        vendor.to_json
     end
 
     #find the cuisine id and make the collection using the collection method
