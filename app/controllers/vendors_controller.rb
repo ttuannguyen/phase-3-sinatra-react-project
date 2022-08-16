@@ -4,13 +4,13 @@ class VendorsController < ApplicationController
 
     get "/vendors" do
         vendors = Vendor.all
-        vendors.to_json
+        vendors.to_json(:include => :cuisine, :except => :cuisine_id)
     end
 
-    # get "/vendors/:id" do
-    #     vendor = Vendor.find(params[:id]) 
-    #     vendor.to_json
-    # end
+    get "/vendors/:id" do
+        vendor = Vendor.find(params[:id]) 
+        vendor.to_json(:include => :cuisine, :except => :cuisine_id)
+    end
 
     post "/vendors" do 
         # create a new review in the database
