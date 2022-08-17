@@ -4,7 +4,7 @@ class VendorsController < ApplicationController
 
     get "/vendors" do
         vendors = Vendor.all
-        vendors.to_json(:include => :cuisine, :except => :cuisine_id)
+        vendors.to_json(:include => :cuisine)
     end
 
     get "/vendors/:id" do
