@@ -26,6 +26,11 @@ class VendorsController < ApplicationController
     end
 
     patch "/vendors/:id" do
+        vendor = Review.find(params[:id])
+        vendor.update(
+          comment: params[:comment],
+        )
+        review.to_json
     end
 
     delete "/vendors/:id" do
