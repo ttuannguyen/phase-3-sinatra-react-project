@@ -9,7 +9,7 @@ class VendorsController < ApplicationController
 
     get "/vendors/:id" do
         vendor = Vendor.find(params[:id]) 
-        vendor.to_json(:include => :cuisine, :except => :cuisine_id)
+        vendor.to_json(:include => :cuisine)
     end
 
     post "/vendors" do 
@@ -26,9 +26,12 @@ class VendorsController < ApplicationController
     end
 
     patch "/vendors/:id" do
-        vendor = Review.find(params[:id])
+        vendor = Vendor.find(params[:id])
         vendor.update(
-          comment: params[:comment],
+            name: params[:name],
+            booth_number: params[:booth_number],
+            cuisine_id: params[:cuisine_id],
+            comment: params[:comment] 
         )
         review.to_json
     end
