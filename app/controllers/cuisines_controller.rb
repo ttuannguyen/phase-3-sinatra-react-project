@@ -8,7 +8,7 @@ class CuisinesController < ApplicationController
 
     get "/cuisines/:id" do
         cuisine = Cuisine.find(params[:id]) 
-        cuisines.to_json(include: [vendors: {only: [:id, :name]}], except: [:created_at, :updated_at])
+        cuisine.to_json(:include => :vendors)
     end
 
     # need a post request 

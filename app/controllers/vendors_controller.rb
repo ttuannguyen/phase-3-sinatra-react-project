@@ -22,7 +22,7 @@ class VendorsController < ApplicationController
             comment: params[:comment] 
         ) 
         # send back a response with the created review as JSON
-        vendor.to_json
+        vendor.to_json(:include => :cuisine)
     end
 
     patch "/vendors/:id" do
@@ -33,8 +33,11 @@ class VendorsController < ApplicationController
             cuisine_id: params[:cuisine_id],
             comment: params[:comment] 
         )
-        review.to_json
+        # binding.pry
+        vendor.to_json(:include => :cuisine)
     end
+
+
 
     delete "/vendors/:id" do
         vendor = Vendor.find(params[:id])
