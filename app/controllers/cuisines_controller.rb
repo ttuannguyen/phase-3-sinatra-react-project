@@ -13,6 +13,16 @@ class CuisinesController < ApplicationController
 
     # need a post request 
 
+    post "/cuisines" do 
+        # create a new review in the database
+        # params is a hash of key-value pairs coming from the body of the request
+        cuisine = Cuisine.create(
+            name: params[:name]
+        ) 
+        # send back a response with the created review as JSON
+        cuisine.to_json(:include => :vendors)
+    end
+
 
       
 end
