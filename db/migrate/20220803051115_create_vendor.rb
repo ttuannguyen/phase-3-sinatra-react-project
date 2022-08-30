@@ -3,7 +3,6 @@ class CreateVendor < ActiveRecord::Migration[6.1]
     create_table :vendors do |t|
       t.string :name
       t.integer :booth_number
-      t.boolean :vegan_option
       t.integer :cuisine_id # this is the foreign key
       t.text :comment
       t.timestamps # created_at and updated_at
