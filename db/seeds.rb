@@ -4,7 +4,6 @@ puts "🌱 Seeding spices..."
 Cuisine.destroy_all
 Vendor.destroy_all
 
-
 asian = Cuisine.create(name: "Asian")
 latin = Cuisine.create(name: "Latin")
 caribbean = Cuisine.create(name: "Caribbean")

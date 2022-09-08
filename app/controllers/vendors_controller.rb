@@ -13,7 +13,7 @@ class VendorsController < ApplicationController
     end
 
     # post "/vendors" do 
-    #     # create a new review in the database
+    #     # create a new vendor in the database
     #     # params is a hash of key-value pairs coming from the body of the request
     #     vendor = Vendor.create(
     #         name: params[:name],
@@ -21,14 +21,11 @@ class VendorsController < ApplicationController
     #         cuisine_id: params[:cuisine_id],
     #         comment: params[:comment] 
     #     ) 
-    #     # send back a response with the created review as JSON
+    #     # send back a response with the created vendor as JSON
     #     vendor.to_json(:include => :cuisine)
     # end
 
     post "/vendors" do 
-        # create a new review in the database
-        # params is a hash of key-value pairs coming from the body of the request
-        
         cuisine = Cuisine.find_or_create_by(name: params[:cuisine_name])
         vendor = Vendor.create(
             name: params[:name],
@@ -36,7 +33,6 @@ class VendorsController < ApplicationController
             cuisine_id: cuisine.id,
             comment: params[:comment] 
         ) 
-        # send back a response with the created review as JSON
         if vendor.save
             vendor.to_json(:include => :cuisine)
         else 
